@@ -15,9 +15,9 @@
         <div class="navbar">
             <a class="heading" href="{{ url_for('index') }}">Čeněk Potužník</a>
             <div class="navbar-items">
-                <a id="navbar-about" href="#">About</a>
-                <a id="work" href="#">Work</a>
-                <a id="navbar-projects" href="#">Personal projects</a>
+                <a id="navbar-about" href="{{ url_for('about') }}">About</a>
+                <a id="navbar-work" href="{{ url_for('work') }}">Work</a>
+                <a id="navbar-projects" href="{{ url_for('projects') }}">Personal projects</a>
             </div>
             <div class="navbar-lang">Čeština</div>
         </div>
