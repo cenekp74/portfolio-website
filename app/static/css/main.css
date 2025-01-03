@@ -1,0 +1,66 @@
+:root {
+    --color-primary: hsl(180, 5%, 5%);
+    --color-secondary: hsl(180, 50%, 90%);
+    --color-tertiary: hsl(240, 80%, 80%);
+    --color-accent: hsl(120, 80%, 80%);
+    --bg-color: var(--color-primary);
+    --text-color: var(--color-secondary);
+    --text-color-muted: hsl(180, 20%, 70%);
+    --link-color: var(var(--text-color));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-family: Menlo, Consolas, Liberation Mono, Lucida Console, monospace;
+}
+
+a {
+    color: var(--link-color);
+}
+
+body > header {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    max-width: 1280px;
+    width: 90vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar a.heading {
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.navbar .navbar-items a {
+    font-size: 1.25rem;
+    padding: 4px 12px;
+    transition: .1s ease-in;
+    display: inline-block;
+}
+
+.navbar .navbar-lang {
+    font-size: 1.2rem;
+}
+
+.navbar .navbar-items a:hover {
+    scale: 1.04;
+    color: var(--text-color-muted);
+}

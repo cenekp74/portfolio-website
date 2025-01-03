@@ -11,15 +11,18 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <div>
+    <header>
+        <div class="navbar">
             <a class="heading" href="{{ url_for('index') }}">Čeněk Potužník</a>
             <div class="navbar-items">
                 <a id="navbar-about" href="#">About</a>
-                <a id="navbar-projects" href="#">Projects</a>
+                <a id="work" href="#">Work</a>
+                <a id="navbar-projects" href="#">Personal projects</a>
             </div>
+            <div class="navbar-lang">Čeština</div>
         </div>
-    </div>
+    </header>
+    
 
     <div class="content">
         {% block body %}
