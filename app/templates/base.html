@@ -15,11 +15,18 @@
         <div class="navbar">
             <a class="heading" href="{{ url_for('index') }}">Čeněk Potužník</a>
             <div class="navbar-items">
+                <a class="navbar-lang">čeština</a> <!-- this is shown only on mobile -->
                 <a id="navbar-about" href="{{ url_for('about') }}">About</a>
                 <a id="navbar-work" href="{{ url_for('work') }}">Work</a>
                 <a id="navbar-projects" href="{{ url_for('projects') }}">Personal projects</a>
             </div>
-            <div class="navbar-lang">Čeština</div>
+            <a class="navbar-lang">Čeština</a> <!-- this is hidden on mobile -->
+            <div class="navbar-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
     

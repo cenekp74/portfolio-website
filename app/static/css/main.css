@@ -7,6 +7,7 @@
     --text-color: var(--color-secondary);
     --text-color-muted: hsl(180, 20%, 55%);
     --link-color: var(var(--text-color));
+    --navbar-width-mobile: 240px;
 }
 
 * {
@@ -24,6 +25,8 @@ body {
 a {
     color: var(--link-color);
 }
+
+/* #region navbar */
 
 body > header {
     width: 100vw;
@@ -60,7 +63,119 @@ body > header {
     font-size: 1.2rem;
 }
 
-.navbar .navbar-items a:hover, .navbar .navbar-items a.active {
-    scale: 1.04;
+.navbar .navbar-items .navbar-lang {
+    display: none;
+    font-size: 1.1rem;
+}
+
+.navbar:not(.expanded) .navbar-items a:hover {
+    scale: 1.07;
     color: var(--text-color-muted);
 }
+
+.navbar .navbar-items a.active {
+    color: var(--text-color-muted);
+}
+
+.navbar .navbar-icon {
+    display: none;
+    width: 36px;
+    height: 27px;
+    position: absolute;
+    right: 16px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    scale: .7;
+}
+
+.navbar .navbar-icon span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: var(--text-color);
+    border-radius: 12px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.navbar .navbar-icon span:nth-child(1) {
+    top: 0px;
+}
+
+.navbar .navbar-icon span:nth-child(2), .navbar .navbar-icon span:nth-child(3) {
+    top: 10.8px;
+}
+
+.navbar .navbar-icon span:nth-child(4) {
+    top: 21.6px;
+}
+
+.navbar.expanded .navbar-icon span:nth-child(1) {
+    top: 10.8px;
+    width: 0%;
+    left: 50%;
+}
+
+.navbar.expanded .navbar-icon span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.navbar.expanded .navbar-icon span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.navbar.expanded .navbar-icon span:nth-child(4) {
+    top: 10.8px;
+    width: 0%;
+    left: 50%;
+}
+
+@media screen and (max-width: 840px) {
+    .navbar .navbar-items .navbar-lang {
+        display: inline;
+    }
+
+    .navbar > .navbar-lang {
+        display: none;
+    }
+
+    .navbar .navbar-icon {
+        display: inline;
+    }
+
+    .navbar .navbar-items {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: var(--bg-color);
+        outline: 2px solid var(--bg-color);
+        border-left: 1px solid var(--text-color-muted);
+        height: 100vh;
+        padding: 4px;
+        transform: translate(100%, 0);
+        transform-origin: 0% 0%;
+        transition: transform .4s cubic-bezier(0.77,0.2,0.05,1.0);
+        width: var(--navbar-width-mobile);
+        overflow-y: auto;
+    }
+
+    .navbar.expanded .navbar-items {
+        transform: none;
+    }
+
+    .navbar .navbar-items a {
+        padding: 16px 12px;
+    }
+
+    .navbar a.heading {
+        font-size: 1.7rem;
+    }
+}
+
+/* #endregion navbar */
