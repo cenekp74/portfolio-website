@@ -1,13 +1,15 @@
 :root {
-    --color-primary: hsl(180, 5%, 5%);
-    --color-secondary: hsl(180, 30%, 90%);
-    --color-tertiary: hsl(240, 80%, 80%);
-    --color-accent: hsl(120, 80%, 80%);
+    --color-primary: hsl(130, 20%, 4%);
+    --color-secondary: hsl(130, 30%, 90%);
+    --color-tertiary: hsl(190, 90%, 50%);
+    --color-accent: hsl(70, 80%, 80%);
     --bg-color: var(--color-primary);
     --text-color: var(--color-secondary);
     --text-color-muted: hsl(180, 20%, 55%);
+    --division-line-color: hsl(180, 5%, 20%);
     --link-color: var(var(--text-color));
     --navbar-width-mobile: 240px;
+    --border-radius: 12px;
 }
 
 * {
@@ -19,14 +21,32 @@ body {
     padding: 0;
     color: var(--text-color);
     background-color: var(--bg-color);
-    font-family: 'Consolas', 'Inconsolata', 'Lucida Console', 'Roboto', 'Liberation Mono', monospace;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 a {
     color: var(--link-color);
 }
 
-/* #region navbar */
+p {
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+    margin: 8px;
+}
+
+.tertiary {
+    color: var(--color-tertiary );
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    max-width: 960px;
+    width: 98vw;
+    margin: 16px auto;
+}
+
+/* #region navbar */ /* NAVBAR */
 
 body > header {
     width: 100vw;
@@ -41,6 +61,7 @@ body > header {
     justify-content: space-between;
     align-items: center;
     padding: 16px 0;
+    font-family: 'Consolas', 'Inconsolata', 'Lucida Console', 'Roboto', 'Liberation Mono', monospace;
 }
 
 .navbar a {
@@ -69,12 +90,13 @@ body > header {
 }
 
 .navbar:not(.expanded) .navbar-items a:hover {
-    scale: 1.07;
+    scale: 1.02;
     color: var(--text-color-muted);
 }
 
 .navbar .navbar-items a.active {
     color: var(--text-color-muted);
+    font-weight: bold;
 }
 
 .navbar .navbar-icon {
@@ -155,7 +177,7 @@ body > header {
         top: 0;
         background-color: var(--bg-color);
         outline: 2px solid var(--bg-color);
-        border-left: 1px solid var(--text-color-muted);
+        border-left: 1px solid var(--division-line-color);
         height: 100vh;
         padding: 4px;
         transform: translate(100%, 0);
@@ -179,3 +201,65 @@ body > header {
 }
 
 /* #endregion navbar */
+
+/* #region index */ /* INDEX */
+
+.welcome-card {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px;
+    border: 1px solid var(--division-line-color);
+    border-radius: var(--border-radius);
+    width: 90%;
+    gap: 16px;
+    justify-content: space-between;
+    transition: .1s ease-in;
+}
+
+.welcome-card:hover {
+    scale: 1.004;
+}
+
+.welcome-card .name {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    font-weight: bolder;
+}
+
+.welcome-card .col-left {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.welcome-card .col-left .socials {
+    align-self: flex-end;
+    justify-self: flex-end;
+    display: flex;
+    gap: 8px;
+}
+
+.welcome-card .col-left .socials a {
+    padding: 8px;
+    border: 1px solid var(--division-line-color);
+    border-radius: var(--border-radius);
+    font-size: 1.4rem;
+}
+
+.welcome-card .col-left .socials a:hover {
+    color: var(--color-accent);
+    cursor: pointer;
+}
+
+.welcome-card .col-right {
+    flex: 3;
+    min-width: 300px;
+}
+
+.welcome-card .col-right p {
+    margin: 0;
+}
+
+/* #endregion index */
