@@ -1,5 +1,5 @@
 :root {
-    --color-primary: hsl(130, 20%, 4%);
+    --color-primary: hsl(130, 20%, 5%);
     --color-secondary: hsl(130, 30%, 90%);
     --color-tertiary: hsl(190, 90%, 50%);
     --color-accent: hsl(70, 80%, 80%);
@@ -40,10 +40,12 @@ p {
 
 .content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     max-width: 960px;
     width: 98vw;
     margin: 16px auto;
+    gap: 12px;
 }
 
 /* #region navbar */ /* NAVBAR */
@@ -62,6 +64,7 @@ body > header {
     align-items: center;
     padding: 16px 0;
     font-family: 'Consolas', 'Inconsolata', 'Lucida Console', 'Roboto', 'Liberation Mono', monospace;
+    z-index: 10;
 }
 
 .navbar a {
@@ -216,10 +219,6 @@ body > header {
     transition: .1s ease-in;
 }
 
-.welcome-card:hover {
-    scale: 1.004;
-}
-
 .welcome-card .name {
     font-size: 2.4rem;
     line-height: 3rem;
@@ -260,6 +259,44 @@ body > header {
 
 .welcome-card .col-right p {
     margin: 0;
+}
+
+.technologies {
+    width: 90%;
+}
+
+.technologies > div {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.technologies > div > div > :first-child {
+    margin-right: 12px;
+}
+
+.technologies > div > div {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding: 12px;
+    border: 1px solid var(--division-line-color);
+    border-radius: var(--border-radius);
+    transition: .1s ease-in;
+    display: flex;
+}
+
+.technologies > div > div:hover {
+    scale: 1.02;
+}
+
+.technologies img, .technologies i {
+    width: 24px;
+    line-height: 100%;
+    display: block;
+}
+
+.technologies img {
+    filter: grayscale(1);
 }
 
 /* #endregion index */
