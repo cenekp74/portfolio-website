@@ -1,6 +1,6 @@
 :root {
     --color-primary: hsl(130, 20%, 5%);
-    --color-secondary: hsl(130, 30%, 90%);
+    --color-secondary: hsl(130, 20%, 92%);
     --color-tertiary: hsl(190, 90%, 50%);
     --color-accent: hsl(70, 80%, 80%);
     --bg-color: var(--color-primary);
@@ -30,8 +30,16 @@ a {
 
 p {
     font-size: 1.25rem;
-    line-height: 1.8rem;
-    margin: 8px;
+    line-height: 1.6rem;
+    margin: 12px 0;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h1.page-heading {
+    font-size: 2.7rem;
 }
 
 .tertiary {
@@ -44,8 +52,12 @@ p {
     align-items: center;
     max-width: 960px;
     width: 98vw;
-    margin: 16px auto;
+    margin: 32px auto;
     gap: 12px;
+}
+
+.content > div {
+    width: 85%;
 }
 
 /* #region navbar */ /* NAVBAR */
@@ -159,7 +171,7 @@ body > header {
     left: 50%;
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 1000px) {
     .navbar .navbar-items .navbar-lang {
         display: inline;
     }
@@ -217,6 +229,7 @@ body > header {
     gap: 16px;
     justify-content: space-between;
     transition: .1s ease-in;
+    margin-bottom: 16px;
 }
 
 .welcome-card .name {

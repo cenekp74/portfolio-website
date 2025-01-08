@@ -6,7 +6,29 @@
 
 {% block body %}
 
-
+<div>
+    <h1 class="page-heading">About me</h1>
+    <p>
+        I am a 17-year-old developer from Prague, Czech Republic. My specialization is creating fast, responsive, and reliable websites. 
+        I have several years of experience in making professional, minimalistic websites that are easy to maintain and free from unnecessary dependencies.
+    </p>
+    <p>
+        My approach to web design is very <b>practical</b>. I avoid frontend frameworks when possible, 
+        prioritizing simplicity, full control over my projects, and long-term reliability. 
+    </p>
+    <p>
+        In addition to web development, I am proficient in <b>Python</b> for a wide range of different applications. I have experience with machine learning (AI), 
+        data visualization, desktop app development, data processing/analysis, web scraping, automation and many more. <br>
+        I usually write backend for my web applications in Python using <b>Flask/Django</b>.
+    </p>
+    <p>
+        Since I often deploy and host projects myself, I am quite knowledgeable about <b>linux</b>. I can manage linux servers on a professional level. 
+    </p>
+    <p>
+        You can check out some of my projects in the <a href="{{ url_for('work') }}">Work experience</a> and <a href="{{ url_for('projects') }}">Personal projects</a>
+        sections. 
+    </p>
+</div>
 
 <script>
     document.getElementById("navbar-about").classList.add("active")
