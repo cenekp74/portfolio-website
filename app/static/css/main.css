@@ -60,6 +60,20 @@ h1.page-heading {
     width: 85%;
 }
 
+@media screen and (max-width: 650px) {
+    h1.page-heading {
+        font-size: 2.6rem;
+    }
+    
+    .content > div {
+        width: 90%;
+    }
+
+    .content {
+        margin: 16px auto;
+    }
+}
+
 /* #region navbar */ /* NAVBAR */
 
 body > header {
@@ -70,7 +84,7 @@ body > header {
 
 .navbar {
     display: flex;
-    max-width: 1280px;
+    max-width: 1600px;
     width: 90vw;
     justify-content: space-between;
     align-items: center;
@@ -97,6 +111,7 @@ body > header {
 
 .navbar .navbar-lang {
     font-size: 1.2rem;
+    margin-left: 50px; /* this is to make .navbar-items more centered on page */
 }
 
 .navbar .navbar-items .navbar-lang {
@@ -209,10 +224,6 @@ body > header {
     .navbar .navbar-items a {
         padding: 16px 12px;
     }
-
-    .navbar a.heading {
-        font-size: 1.7rem;
-    }
 }
 
 /* #endregion navbar */
@@ -244,6 +255,7 @@ body > header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 4px;
 }
 
 .welcome-card .col-left .socials {
@@ -289,7 +301,7 @@ body > header {
 }
 
 .technologies > div > div {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.5rem;
     padding: 12px;
     border: 1px solid var(--division-line-color);
