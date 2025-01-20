@@ -57,7 +57,7 @@ h1.page-heading {
 }
 
 .content > div {
-    width: 85%;
+    width: 90%;
 }
 
 @media screen and (max-width: 650px) {
@@ -236,7 +236,6 @@ body > header {
     padding: 16px;
     border: 1px solid var(--division-line-color);
     border-radius: var(--border-radius);
-    width: 90%;
     gap: 16px;
     justify-content: space-between;
     transition: .1s ease-in;
@@ -287,22 +286,17 @@ body > header {
 }
 
 .technologies {
-    width: 90%;
-}
-
-.technologies > div {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
 }
 
-.technologies > div > div > :first-child {
+.technologies > div > :first-child {
     margin-right: 12px;
 }
 
-.technologies > div > div {
+.technologies > div {
     font-size: 1.4rem;
-    line-height: 1.5rem;
     padding: 12px;
     border: 1px solid var(--division-line-color);
     border-radius: var(--border-radius);
@@ -310,14 +304,16 @@ body > header {
     display: flex;
 }
 
-.technologies > div > div:hover {
+.technologies > div:hover {
     scale: 1.02;
 }
 
 .technologies img, .technologies i {
-    width: 24px;
-    line-height: 100%;
-    display: block;
+    width: 28px;
+}
+
+.technologies i {
+    font-size: 28px;
 }
 
 .technologies img {
@@ -325,3 +321,55 @@ body > header {
 }
 
 /* #endregion index */
+
+/* #region projects */
+.project-technologies {
+    display: flex;
+    gap: 4px;
+    height: fit-content;
+    flex-wrap: wrap;
+}
+
+.project-technologies > div {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    padding: 8px;
+    border: 1px solid var(--division-line-color);
+    border-radius: var(--border-radius);
+    display: flex;
+    gap: 4px;
+}
+
+.project-technologies img, .project-technologies i {
+    width: 22px;
+    display: block;
+}
+
+.project-technologies i {
+    font-size: 22px;
+}
+
+.project-image {
+    width: 100%;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.projects > div {
+    border: 1px solid var(--division-line-color);
+    border-radius: var(--border-radius);
+}
+
+.project-details {
+    padding: 0 16px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.projects {
+    max-width: 700px;
+}
+/* #endregion projects */
