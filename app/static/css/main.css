@@ -34,6 +34,10 @@ p {
     margin: 12px 0;
 }
 
+li {
+    font-size: 1.25rem;
+}
+
 h1 {
     font-size: 2.2rem;
 }
@@ -52,7 +56,7 @@ h1.page-heading {
     align-items: center;
     max-width: 960px;
     width: 98vw;
-    margin: 32px auto;
+    margin: 100px auto;
     gap: 12px;
 }
 
@@ -91,6 +95,8 @@ body > header {
     padding: 16px 0;
     font-family: 'Consolas', 'Inconsolata', 'Lucida Console', 'Roboto', 'Liberation Mono', monospace;
     z-index: 10;
+    position: fixed;
+    background-color: var(--bg-color);
 }
 
 .navbar a {
