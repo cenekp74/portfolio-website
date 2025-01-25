@@ -8,18 +8,20 @@
 
 <div class="projects">
     <div>
-        <img class="project-image" src="{{ url_for('static', filename='img/projects/notesdb/notesdb.png') }}">
-        <div class="project-details">
-            <div>
-                <h1>NotesDB</h1>
-                <div class="project-description">A website for sharing study materials</div>
+        <a href="{{ url_for('project', project_name='notesdb') }}">
+            <img class="project-image" src="{{ url_for('static', filename='img/projects/notesdb/notesdb.png') }}">
+            <div class="project-details">
+                <div>
+                    <h1>NotesDB</h1>
+                    <div class="project-description">A website for sharing study materials</div>
+                </div>
+                <div class="project-technologies">
+                    <div><i class="fa-brands fa-python fa-fw"></i><span>Python</span></div>
+                    <div><img src="{{ url_for('static', filename='img/logos/flask.svg') }}"><span>Flask</span></div>
+                    <div><img src="{{ url_for('static', filename='img/logos/sqlite.svg') }}"><span>SQLite</span></div>
+                </div>
             </div>
-            <div class="project-technologies">
-                <div><i class="fa-brands fa-python fa-fw"></i><span>Python</span></div>
-                <div><img src="{{ url_for('static', filename='img/logos/flask.svg') }}"><span>Flask</span></div>
-                <div><img src="{{ url_for('static', filename='img/logos/sqlite.svg') }}"><span>SQLite</span></div>
-            </div>
-        </div>
+        </a>
     </div>
 </div>
 

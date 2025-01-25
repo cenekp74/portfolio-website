@@ -7,7 +7,7 @@
     --text-color: var(--color-secondary);
     --text-color-muted: hsl(180, 20%, 55%);
     --division-line-color: hsl(180, 5%, 20%);
-    --link-color: var(var(--text-color));
+    --link-color: var(--text-color);
     --navbar-width-mobile: 240px;
     --border-radius: 12px;
 }

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+<title>NotesDB | Cenek Potuznik</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="project-header">
+        <div>
+            <a class="project-link" href="https://notesdb.potuznik.dev" target="_blank">
+                <h1>NotesDB</h1>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="project-description">A website for sharing study materials</div>
+        </div>
+        <div class="project-technologies">
+            <div><i class="fa-brands fa-python fa-fw"></i><span>Python</span></div>
+            <div><img src="{{ url_for('static', filename='img/logos/flask.svg') }}"><span>Flask</span></div>
+            <div><img src="{{ url_for('static', filename='img/logos/sqlite.svg') }}"><span>SQLite</span></div>
+            <div><i class="fa-brands fa-html5 fa-fw"></i><span>HTML</span></div>
+            <div><i class="fa-brands fa-css fa-fw"></i><span>CSS</span></div>
+            <div><i class="fa-brands fa-js fa-fw"></i><span>JavaScript</span></div>
+        </div>
+    </div>
+
+
+{% endblock %}

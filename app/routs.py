@@ -17,3 +17,7 @@ def work():
 @app.route('/projects')
 def projects():
     return render_template("projects.html")
+
+@app.route('/projects/<project_name>')
+def project(project_name):
+    return render_template(f"projects/{project_name}.html")
