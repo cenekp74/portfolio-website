@@ -70,11 +70,7 @@ h1.page-heading {
     }
     
     .content > div {
-        width: 90%;
-    }
-
-    .content {
-        margin: 16px auto;
+        width: 95%;
     }
 }
 
@@ -140,7 +136,7 @@ body > header {
     width: 36px;
     height: 27px;
     position: absolute;
-    right: 16px;
+    right: 0;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
@@ -193,6 +189,10 @@ body > header {
 }
 
 @media screen and (max-width: 1000px) {
+    .navbar {
+        width: 95vw;
+    }
+
     .navbar .navbar-items .navbar-lang {
         display: inline;
     }
@@ -298,28 +298,33 @@ body > header {
 }
 
 .technologies > div > :first-child {
-    margin-right: 12px;
+    margin-right: 6px;
 }
 
 .technologies > div {
-    font-size: 1.4rem;
-    padding: 12px;
+    font-size: 1.22rem;
+    line-height: 1.4rem;
+    padding: 8px;
     border: 1px solid var(--division-line-color);
     border-radius: var(--border-radius);
-    transition: .1s ease-in;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    transition: .14s ease-in-out;
 }
 
-.technologies > div:hover {
+.technologies-main > div:hover {
     scale: 1.02;
+    cursor: default;
 }
 
 .technologies img, .technologies i {
-    width: 28px;
+    width: 22px;
 }
 
 .technologies i {
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .technologies img {
@@ -329,30 +334,11 @@ body > header {
 /* #endregion index */
 
 /* #region projects */
-.project-technologies {
+.project-details .technologies {
     display: flex;
     gap: 4px;
     height: fit-content;
     flex-wrap: wrap;
-}
-
-.project-technologies > div {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-    padding: 8px;
-    border: 1px solid var(--division-line-color);
-    border-radius: var(--border-radius);
-    display: flex;
-    gap: 4px;
-}
-
-.project-technologies img, .project-technologies i {
-    width: 22px;
-    display: block;
-}
-
-.project-technologies i {
-    font-size: 22px;
 }
 
 .project-image {
