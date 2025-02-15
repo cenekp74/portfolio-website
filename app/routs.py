@@ -1,5 +1,9 @@
 from app import app
-from flask import render_template
+from flask import render_template, send_from_directory
+
+@app.route('/favicon.ico')
+def send_favicon():
+    return send_from_directory('static/img', 'favicon.ico')
 
 @app.route('/')
 @app.route('/index')
