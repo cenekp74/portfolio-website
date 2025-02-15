@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+<title>rust-labeler | Cenek Potuznik</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="project-header">
+        <div>
+            <a class="project-link" href="https://github.com/cenekp74/rust-labeler" target="_blank">
+                <h1>rust-labeler</h1>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="project-description">Rust app for labeling images</div>
+        </div>
+        <div class="technologies">
+            <div><i class="fa-brands fa-rust fa-fw"></i><span>Rust</span></div>
+            <div><i class="fa-brands fa-css fa-fw"></i><span>CSS</span></div>
+            <div><i class="fa-brands fa-js fa-fw"></i><span>JavaScript</span></div>
+            <div><i class="fa-brands fa-html5 fa-fw"></i><span>HTML</span></div>
+        </div>
+        <a href="https://github.com/cenekp74/rust-labeler" target="_blank" class="project-source">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+    <div>
+        <h1>About this project</h1>
+        <p>
+            Rust-labeler is a simple app made with <a href="https://tauri.app/">tauri</a> in rust. It provides a simple way to label images with a category.
+            It features keyboard shortcuts for quick workflow. 
+        </p>
+        <h1>Key features</h1>
+        <ul>
+            <li><b>images visualization</b> - images are represented by dots for simple navigation and overview</li>
+            <li><b>keyboard shortcuts</b> - keybindings for each category as well as for navigation</li>
+            <li><b>output as json</b> - output is in json format for easy processing</li>
+        </ul>
+        <h1>Current status and future plans</h1>
+        <p>
+            I am using this app frequently myself, therefore I will keep maintaining it and adding new features. If you have any 
+            feature request, feel free to contact me via email. 
+        </p>
+        <h1>Screeshots</h1>
+        <img src="{{ url_for('static', filename='img/projects/rust-labeler/rust-labeler.png') }}">
+        <img src="{{ url_for('static', filename='img/projects/rust-labeler/edit-categories.png') }}">
+    </div>
+
+{% endblock %}

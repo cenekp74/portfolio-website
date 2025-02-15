@@ -46,3 +46,9 @@
 .project-source i:hover {
     color: var(--color-accent);
 }
+
+img {
+    max-width: 100%;
+    margin: 16px;
+    border: 1px solid var(--division-line-color);
+}

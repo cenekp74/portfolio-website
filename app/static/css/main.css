@@ -375,7 +375,8 @@ a h1 i.fa-arrow-up-right-from-square {
     max-height: 450px;
     height: 50vh;
     position: relative;
-    box-shadow: 0 -20px 80px -20px #ffffff17 inset
+    box-shadow: 0 -20px 80px -20px #ffffff17 inset;
+    overflow: hidden;
 }
 
 .projects > div > a:hover {
@@ -396,6 +397,9 @@ a h1 i.fa-arrow-up-right-from-square {
 
 .projects {
     max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 /* #endregion projects */
 
