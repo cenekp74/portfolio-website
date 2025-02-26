@@ -30,30 +30,67 @@
     </div>
     <div>
         <h1>About this project</h1>
-        <p>
-            I created anki-share because I was frustrated. I am a high school student, so I often make small <a target="_blank" href="https://apps.ankiweb.net/">Anki</a> 
-            decks that I learn in a day or two. I was unable to share them with my friends that don't use Anki - they would have to install it, and for those using IOS, 
-            they would have to buy the app first. So I usually ended up inserting the cards to something like quizlet manually. 
-        </p>
-        <p>
-            This project aims to provide a very simple way of sharing small Anki decks. You can simply upload a deck of Anki cards and send the URL to anyone. 
-            They can then view and study the deck on any device, without having to install anything or create any accounts.
-        </p>
-        <p>
-            You can see an example uploaded deck for yourself <a target="_blank" href="https://anki-share.com/deck/98204d00567cda01">here</a>. 
-            To read more about this project, please visit the <a target="_blank" href="https://anki-share.com">website</a> and read the 
-            readme file on github.
-        </p>
+            <p>
+                I created anki-share because I was frustrated. I am a high school student, so I often make small <a target="_blank" href="https://apps.ankiweb.net/">Anki</a> 
+                decks that I learn in a day or two. I was unable to share them with my friends that don't use Anki - they would have to install it, and for those using IOS, 
+                they would have to buy the app first. So I usually ended up inserting the cards to something like quizlet manually. 
+            </p>
+            <p>
+                This project aims to provide a very simple way of sharing small Anki decks. You can simply upload a deck of Anki cards and send the URL to anyone. 
+                They can then view and study the deck on any device, without having to install anything or create any accounts.
+            </p>
+            <p>
+                You can see an example uploaded deck for yourself <a target="_blank" href="https://anki-share.com/deck/98204d00567cda01">here</a>. 
+                To read more about this project, please visit the <a target="_blank" href="https://anki-share.com">website</a> and read the 
+                readme file on github.
+            </p>
         <h1>Key features</h1>
-        <ul>
-            <li><b>celery task management</b> - the processing of uploaded decks is handled by celery combined with redis</li>
-            <li><b>learn and browse features</b> - users can either "learn" the cards or "browse" them</li>
-        </ul>
+            <ul>
+                <li><b>celery task management</b> - the processing of uploaded decks is handled by celery combined with redis</li>
+                <li><b>learn and browse features</b> - users can either "learn" the cards or "browse" them</li>
+            </ul>
         <h1>Future plans</h1>
-        <p>
-            I plan on continuing the development of anki-share. I want to add more social features for sharing the decks publicly (login system,
-            likes, ...). I also want to focus on adding support for more anki features (schleduled card review, cards with more than 2 fields, ...). 
-        </p>
+            <p>
+                I plan on continuing the development of anki-share. I want to add more social features for sharing the decks publicly (login system,
+                likes, ...). I also want to focus on adding support for more anki features (schleduled card review, cards with more than 2 fields, ...). 
+            </p>
+        <h1>Technical details</h1>
+            <p>
+                In this section I aim to provide some information on <b>how to process .apkg anki decks in python</b>. The information I found on this topic
+                was scarse and often inaccurate or outdated. 
+            </p>
+            <h2>.apkg versions</h2>
+                <p>
+                    Afaik the .apkg files come in 2 different versions. All of them are a zip file containing an sqlite database alongside of media files. 
+                </p>
+            <h3>Older versions</h3>
+                <p>
+                    Older versions of anki use a simple approach described above. There is an sqlite database (either <i>collection.anki2</i> or <i>collection.anki21</i>, 
+                    depending on the version). Then there is a file called <i>media</i>. It is a json file mapping the original filenames or media attachments to 
+                    their new names. The new names are just numbers starting at 0. 
+                </p>
+            <h3>Newer versions</h3>
+                <p>
+                    In newer versions of Anki, things are a lot more complicated. The files are compressed and some of them are encoded 
+                    using media buffers. 
+                </p>
+                <p>
+                    The cards are now stored in a file called <i>collection.anki21b</i>. It is a sqlite database with the same structure as <i>collection.anki21</i>
+                    in older versions, but it is compressed using <a target="_blank" href="https://github.com/facebook/zstd">zstd</a>. 
+                    It can be decompressed using (for example) pyzstd and then read the same way as <i>collection.anki21</i>. 
+                </p>
+                <p>
+                    The <i>media</i> file in newer versions is not json, but it is serialized using <a target="_blank" href="https://protobuf.dev/">protocol buffers</a>. 
+                    Deserializing it is not so easy. You have to obtain the <i>.proto</i> files from 
+                    <a target="_blank" href="https://github.com/ankitects/anki/tree/main/proto/anki">anki's github</a>. A lot of articles say that you only need the 
+                    <i>import_export.proto</i> file form there, but you actually need all of them. You then need to generate files for your programming languages 
+                    (python in my case) using <a target="_blank" href="https://grpc.io/docs/protoc-installation/">protoc</a>. Then you can finally import the files 
+                    into your project and use them to read the contents of <i>media</i> file.
+                </p>
+                <p>
+                    The files of the media themselves (called <i>0</i>, <i>1</i>, <i>2</i> etc. in the apkg file) are compressed using zstd and can be decompressed in the 
+                    same way as <i>collection.anki21b</i>. 
+                </p>
     </div>
 
 {% endblock %}
