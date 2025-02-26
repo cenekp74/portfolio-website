@@ -10,6 +10,22 @@
 <div class="projects">
     <div>
         <a href="{{ url_for('project', project_name='notesdb') }}">
+            <img class="project-image" src="{{ url_for('static', filename='img/projects/anki-share/anki-share.png') }}">
+            <div class="project-details">
+                <div>
+                    <h1>anki-share</h1>
+                    <div class="project-description">A website for sharing anki decks</div>
+                </div>
+                <div class="technologies">
+                    <div><i class="fa-brands fa-python fa-fw"></i><span>Python</span></div>
+                    <div><img src="{{ url_for('static', filename='img/logos/flask.svg') }}"><span>Flask</span></div>
+                    <div><img src="{{ url_for('static', filename='img/logos/celery.svg') }}"><span>Celery</span></div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div>
+        <a href="{{ url_for('project', project_name='notesdb') }}">
             <img class="project-image" src="{{ url_for('static', filename='img/projects/notesdb/notesdb.png') }}">
             <div class="project-details">
                 <div>

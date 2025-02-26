@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+<title>anki-share | Cenek Potuznik</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="project-header">
+        <div>
+            <a class="project-link" href="https://anki-share.com" target="_blank">
+                <h1>anki-share</h1>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="project-description">A website for sharing anki decks</div>
+        </div>
+        <div class="technologies">
+            <div><i class="fa-brands fa-python fa-fw"></i><span>Python</span></div>
+            <div><img src="{{ url_for('static', filename='img/logos/flask.svg') }}"><span>Flask</span></div>
+            <div><img src="{{ url_for('static', filename='img/logos/sqlite.svg') }}"><span>SQLite</span></div>
+            <div><img src="{{ url_for('static', filename='img/logos/celery.svg') }}"><span>Celery</span></div>
+            <div><i class="fa-brands fa-html5 fa-fw"></i><span>HTML</span></div>
+            <div><i class="fa-brands fa-css fa-fw"></i><span>CSS</span></div>
+            <div><i class="fa-brands fa-js fa-fw"></i><span>JavaScript</span></div>
+        </div>
+        <a href="https://github.com/cenekp74/anki-share" target="_blank" class="project-source">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+    <div>
+        <h1>About this project</h1>
+        <p>
+            I created anki-share because I was frustrated. I am a high school student, so I often make small <a target="_blank" href="https://apps.ankiweb.net/">Anki</a> 
+            decks that I learn in a day or two. I was unable to share them with my friends that don't use Anki - they would have to install it, and for those using IOS, 
+            they would have to buy the app first. So I usually ended up inserting the cards to something like quizlet manually. 
+        </p>
+        <p>
+            This project aims to provide a very simple way of sharing small Anki decks. You can simply upload a deck of Anki cards and send the URL to anyone. 
+            They can then view and study the deck on any device, without having to install anything or create any accounts.
+        </p>
+        <p>
+            You can see an example uploaded deck for yourself <a target="_blank" href="https://anki-share.com/deck/98204d00567cda01">here</a>. 
+            To read more about this project, please visit the <a target="_blank" href="https://anki-share.com">website</a> and read the 
+            readme file on github.
+        </p>
+        <h1>Key features</h1>
+        <ul>
+            <li><b>celery task management</b> - the processing of uploaded decks is handled by celery combined with redis</li>
+            <li><b>learn and browse features</b> - users can either "learn" the cards or "browse" them</li>
+        </ul>
+        <h1>Future plans</h1>
+        <p>
+            I plan on continuing the development of anki-share. I want to add more social features for sharing the decks publicly (login system,
+            likes, ...). I also want to focus on adding support for more anki features (schleduled card review, cards with more than 2 fields, ...). 
+        </p>
+    </div>
+
+{% endblock %}
