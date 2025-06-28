@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}?v=002">
+<title>selfhosted | Cenek Potuznik</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="project-header">
+        <div>
+            <a class="project-link" href="#" target="_blank">
+                <h1>Self-hosted projects</h1>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="project-description">Rust app for labeling images</div>
+        </div>
+        <div class="technologies">
+            <div><i class="fa-brands fa-linux fa-fw"></i><span>Linux</span></div>
+            <div><i class="fa-brands fa-docker fa-fw"></i><span>Docker</span></div>
+        </div>
+    </div>
+    <div>
+        <p>
+            I am running my own server at home, hosting multiple services for my personal use. <br><br>
+            These services include:
+            <ul>
+                <li><a href="https://media.potuznik.dev">Jellyfin</a></li>
+                <li><a href="https://audiobooks.potuznik.dev">Audiobookshelf</a></li>
+                <li><a href="https://trilium.potuznik.dev">TriliumNext</a></li>
+                <li><a href="https://immich.potuznik.dev">Immich</a></li>
+            </ul>
+        </p>
+        <p>
+            The server that these services are hosted on is an old hp machine running ubuntu server 22.04. 
+            I use nginx as reverse proxy and docker for containing the services. To hide my public ip, I use 
+            cloudflare's proxy. 
+        </p>
+        <p>
+            In the future, I would like to fully abandon big tech companies such as google and microsoft and replace their 
+            products with open source, self-hosted alternatives. I am currently in the proces of setting up my own mail server 
+            and nextcloud. 
+        </p>
+    </div>
+
+{% endblock %}
