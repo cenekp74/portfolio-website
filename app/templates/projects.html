@@ -8,6 +8,10 @@
 {% block body %}
 
 <div class="projects">
+    <h1 class="page-heading" style="margin-bottom: 8px;">My projects</h1>
+    <p style="margin-top: 0;">
+        Below, you can find a small selection of my personal projects that I occasionally work on for fun.
+    </p>
     <div>
         <a href="{{ url_for('project', project_name='anki-share') }}">
             <img class="project-image" src="{{ url_for('static', filename='img/projects/anki-share/anki-share.png') }}">
