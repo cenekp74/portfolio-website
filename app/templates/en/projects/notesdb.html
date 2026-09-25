@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% import '_macros.html' as m %}
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}?v=002">
@@ -15,14 +16,7 @@
             </a>
             <div class="project-description">A website for sharing study materials (Czech)</div>
         </div>
-        <div class="technologies">
-            <div><i class="fa-brands fa-python fa-fw"></i><span>Python</span></div>
-            <div><img src="{{ url_for('static', filename='img/logos/flask.svg') }}"><span>Flask</span></div>
-            <div><img src="{{ url_for('static', filename='img/logos/sqlite.svg') }}"><span>SQLite</span></div>
-            <div><i class="fa-brands fa-html5 fa-fw"></i><span>HTML</span></div>
-            <div><i class="fa-brands fa-css fa-fw"></i><span>CSS</span></div>
-            <div><i class="fa-brands fa-js fa-fw"></i><span>JavaScript</span></div>
-        </div>
+        {{ m.technologies(['Python', 'Flask', 'SQLite', 'HTML', 'CSS', 'JavaScript']) }}
         <a href="https://github.com/cenekp74/notesdb" target="_blank" class="project-source">
             <i class="fa-brands fa-github"></i>
         </a>

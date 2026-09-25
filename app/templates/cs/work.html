@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Pracovní zkušenosti | Čeněk Potužník</title>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="work-experience">
+    <h1 class="page-heading">Moje pracovní zkušenosti</h1>
+    <div>
+        <h1>Ústav fyziky atmosféry</h1>
+        <p>
+            Od roku 2022 pracuji na řadě projektů pro <a href="https://ufa.cas.cz" target="_blank">Ústav fyziky atmosféry AV ČR</a>.
+        </p>
+        <p>
+            Mou hlavní prací je zpracování vědeckých dat – tvorba grafů, implementace různých statistických modulů, trénování neuronových sítí apod. Pracoval jsem také
+            na interních nástrojích pro vizualizaci meteorologických dat v reálném čase.
+        </p>
+        <p>
+            Moje práce přímo přispěla k několika vědeckým článkům, některé z nich najdete <a href="https://scholar.google.com/citations?view_op=list_works&hl=cs&user=TBRXhcoAAAAJ">zde</a>.
+        </p>
+    </div>
+    <div>
+        <h1>Fyzikální ústav</h1>
+        <p>
+            Kromě práce v Ústavu fyziky atmosféry jsem loni (2025) začal pracovat
+            ve <a href="https://www.fzu.cz/" target="_blank">Fyzikálním ústavu AV ČR</a>. Jsem malou součástí týmu
+            <a href="https://dioscuri-one.com/" target="_blank">Dioscuri Centre for Single-Molecule Optics</a>.
+        </p>
+    </div>
+    <div>
+        <h1>Filmový festival JSNO</h1>
+        <p>
+            V letech 2024 a 2025 jsem měl na starosti IT pro filmový festival <a href="https://jsno.cz" target="_blank"><b>Jeden Svět na Ohradní</b></a>. Vytvořil jsem a spravoval
+            <a href="https://github.com/cenekp74/festival" target="_blank">web festivalu</a> (včetně databáze a interních nástrojů),
+            vyvinul <a href="https://github.com/cenekp74/festival-filmy-server" target="_blank">systém pro automatické přehrávání médií</a> na více počítačích,
+            vytvořil <a href="https://github.com/cenekp74/festival-prichodovy-system" target="_blank">docházkový systém</a> a navrhl
+            <a href="https://github.com/cenekp74/festival-obrazovky">systém</a> pro zobrazování obsahu na televizních obrazovkách po celé budově.
+        </p>
+    </div>
+    <div>
+        <h1>Práce na volné noze</h1>
+        <p>
+            Příležitostně přijímám zakázky na volné noze (mám účet na <a href="https://www.fiverr.com/users/cenekp">Fiverru</a> a PeoplePerHour).
+        </p>
+        <p>
+            Mým nejzajímavějším freelance projektem byla implementace neuronové sítě pro řešení captcha challengí v arabštině (zdrojový kód bohužel nemohu sdílet).
+            Pracoval jsem také na několika projektech zaměřených na automatizaci a web scraping.
+        </p>
+    </div>
+</div>
+
+<script>
+    document.getElementById("navbar-work").classList.add("active")
+</script>
+{% endblock %}

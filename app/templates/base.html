@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}">
 
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0", shrink-to-fit="no">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Čeněk Potužník">
+    <meta property="og:locale" content="{{ t.og_locale }}">
     <meta property="og:title" content="{% block og_title %}Čeněk Potužník{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Full stack web developer and Python developer based in Prague, Czech Republic.{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ t.og_description }}{% endblock %}">
     <meta property="og:url" content="{{ request.url }}">
+    {% for l, url in alternates.items() %}
+    <link rel="alternate" hreflang="{{ l }}" href="{{ url }}">
+    {% endfor %}
+    {% if alternates %}
+    <link rel="alternate" hreflang="x-default" href="{{ alternates.en }}">
+    {% endif %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}?v=002">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     {% block head %}
@@ -21,12 +28,12 @@
         <div class="navbar">
             <a class="heading" href="{{ url_for('index') }}">Čeněk Potužník</a>
             <div class="navbar-items">
-                <a class="navbar-lang" title="brzo bude/coming soon">čeština</a> <!-- this is shown only on mobile -->
-                <a id="navbar-about" href="{{ url_for('about') }}">About</a>
-                <a id="navbar-work" href="{{ url_for('work') }}">Work experience</a>
-                <a id="navbar-projects" href="{{ url_for('projects') }}">Projects</a>
+                <a class="navbar-lang" href="{{ switch_url }}" hreflang="{{ 'en' if lang == 'cs' else 'cs' }}">{{ t.lang_switch | lower }}</a> <!-- this is shown only on mobile -->
+                <a id="navbar-about" href="{{ url_for('about') }}">{{ t.about }}</a>
+                <a id="navbar-work" href="{{ url_for('work') }}">{{ t.work }}</a>
+                <a id="navbar-projects" href="{{ url_for('projects') }}">{{ t.projects }}</a>
             </div>
-            <a class="navbar-lang" title="brzo bude/coming soon">Čeština</a> <!-- this is hidden on mobile -->
+            <a class="navbar-lang" href="{{ switch_url }}" hreflang="{{ 'en' if lang == 'cs' else 'cs' }}">{{ t.lang_switch }}</a> <!-- this is hidden on mobile -->
             <div class="navbar-icon">
                 <span></span>
                 <span></span>
@@ -35,7 +42,7 @@
             </div>
         </div>
     </header>
-    
+
 
     <div class="content">
         {% block body %}

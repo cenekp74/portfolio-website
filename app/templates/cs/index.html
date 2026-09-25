@@ -2,7 +2,7 @@
 {% import '_macros.html' as m %}
 
 {% block head %}
-<title>Cenek Potuznik</title>
+<title>Čeněk Potužník</title>
 {% endblock %}
 
 
@@ -19,27 +19,27 @@
     </div>
     <div class="col-right">
         <p>
-            I am a full stack <span class="tertiary">web developer</span> and <span class="tertiary">Python developer</span>
-            based in <span class="tertiary">Prague, Czech Republic</span>. I have years of experience in web design, web application design and 
-            python data processing.
+            Jsem full stack <span class="tertiary">webový vývojář</span> a <span class="tertiary">Python vývojář</span>
+            z <span class="tertiary">Prahy</span>. Mám několikaleté zkušenosti s tvorbou webů, návrhem webových aplikací
+            a zpracováním dat v Pythonu.
         </p>
     </div>
 </div>
 
 <div>
-    <h1>Technologies I work with</h1>
+    <h1>Technologie, se kterými pracuji</h1>
     {{ m.technologies(['Python', 'Flask', 'Matplotlib', 'TensorFlow', 'Rust', 'HTML', 'CSS', 'JavaScript', 'SQLite', 'Git', 'Linux', 'Cloudflare'], class='technologies technologies-main') }}
 </div>
 
 <div>
     <a href="{{ url_for('about') }}">
-        <h1>More about me<i class="fa-solid fa-arrow-up-right-from-square"></i></h1>
+        <h1>Více o mně<i class="fa-solid fa-arrow-up-right-from-square"></i></h1>
     </a>
     <a href="{{ url_for('work') }}">
-        <h1>My work experience<i class="fa-solid fa-arrow-up-right-from-square"></i></h1>
+        <h1>Moje pracovní zkušenosti<i class="fa-solid fa-arrow-up-right-from-square"></i></h1>
     </a>
     <a href="{{ url_for('projects') }}">
-        <h1>Projects I have worked on<i class="fa-solid fa-arrow-up-right-from-square"></i></h1>
+        <h1>Projekty, na kterých jsem pracoval<i class="fa-solid fa-arrow-up-right-from-square"></i></h1>
     </a>
 </div>
 

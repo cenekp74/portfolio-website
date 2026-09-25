@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}?v=002">
+<title>NotesDB | Čeněk Potužník</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="project-header">
+        <div>
+            <a class="project-link" href="https://notesdb.potuznik.dev" target="_blank">
+                <h1>NotesDB</h1>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="project-description">Web pro sdílení studijních materiálů</div>
+        </div>
+        {{ m.technologies(['Python', 'Flask', 'SQLite', 'HTML', 'CSS', 'JavaScript']) }}
+        <a href="https://github.com/cenekp74/notesdb" target="_blank" class="project-source">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+    <div>
+        <h1>O projektu</h1>
+        <p>
+            NotesDB vznikla, aby studenti na mém gymnáziu mohli sdílet studijní materiály přehledně a organizovaně.
+            Doufal jsem, že se uchytí a lidé budou
+            sdílet své školní práce, až nakonec vznikne databáze pokrývající většinu předmětů celého učebního plánu. <br>
+            NotesDB byl můj první pokus o full stack webovou aplikaci. Když se na ni dívám teď, spoustu věcí bych udělal
+            jinak.
+        </p>
+        <h1>Hlavní funkce</h1>
+        <ul>
+            <li><b>pokročilé vyhledávání</b> – filtry, řazení atd.</li>
+            <li><b>uživatelské účty</b> – s přihlašováním, profilovými obrázky, obnovou hesla, ...</li>
+            <li><b>e-mailový systém</b> – automatické odesílání e-mailů z adresy @notesdb.cz</li>
+            <li><b>počítadlo zobrazení</b></li>
+            <li><b>světlý/tmavý režim</b></li>
+        </ul>
+        <h1>Současný stav a plány do budoucna</h1>
+        <p>
+            Kvůli nízké aktivitě uživatelů byla NotesDB archivována a přesunuta z notesdb.cz na notesdb.potuznik.dev.
+            V současném stavu je registrace nových uživatelů i odesílání e-mailů vypnuté.
+        </p>
+        <p>
+            V budoucnu bych rád vytvořil lepší verzi tohoto webu – uživatelsky přívětivější, s více
+            funkcemi a lepším designem.
+        </p>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}?v=002">
+<title>anki-share | Čeněk Potužník</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="project-header">
+        <div>
+            <a class="project-link" href="https://anki-share.com" target="_blank">
+                <h1>anki-share</h1>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="project-description">Web pro sdílení balíčků Anki</div>
+        </div>
+        {{ m.technologies(['Python', 'Flask', 'SQLite', 'Celery', 'HTML', 'CSS', 'JavaScript']) }}
+        <a href="https://github.com/cenekp74/anki-share" target="_blank" class="project-source">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+    <div>
+        <h1>O projektu</h1>
+            <p>
+                anki-share vznikl z frustrace. Jako student gymnázia si často vytvářím malé balíčky v <a target="_blank" href="https://apps.ankiweb.net/">Anki</a>,
+                které se naučím za den nebo dva. Nemohl jsem je ale sdílet s kamarády, kteří Anki nepoužívají – museli by si ho nainstalovat
+                a uživatelé iOS by si aplikaci museli nejdřív koupit. Většinou jsem tak nakonec kartičky ručně přepisoval třeba do Quizletu.
+            </p>
+            <p>
+                Cílem projektu je nabídnout velmi jednoduchý způsob, jak sdílet malé balíčky Anki. Stačí nahrát balíček kartiček a komukoli poslat odkaz.
+                Ten si pak může balíček prohlédnout a učit se z něj na jakémkoli zařízení, aniž by musel cokoli instalovat nebo si zakládat účet.
+            </p>
+            <p>
+                Ukázkový nahraný balíček si můžete prohlédnout <a target="_blank" href="https://anki-share.com/deck/98204d00567cda01">zde</a>.
+                Více o projektu se dozvíte na <a target="_blank" href="https://anki-share.com">webu</a> a v souboru
+                readme na GitHubu.
+            </p>
+        <h1>Hlavní funkce</h1>
+            <ul>
+                <li><b>správa úloh pomocí Celery</b> – zpracování nahraných balíčků obstarává Celery v kombinaci s Redisem</li>
+                <li><b>režimy učení a prohlížení</b> – uživatelé se mohou kartičky „učit“, nebo je jen „procházet“</li>
+            </ul>
+        <h1>Plány do budoucna</h1>
+            <p>
+                Na anki-share plánuji dál pracovat. Chci přidat více sociálních funkcí pro veřejné sdílení balíčků (přihlašování,
+                lajky, ...). Také se chci zaměřit na podporu dalších funkcí Anki (plánované opakování kartiček, kartičky s více než dvěma poli, ...).
+            </p>
+        <h1>Technické detaily</h1>
+            <p>
+                V této části chci poskytnout pár informací o tom, <b>jak zpracovávat balíčky Anki ve formátu .apkg v Pythonu</b>. Informací na toto téma
+                jsem našel málo a často byly nepřesné nebo zastaralé.
+            </p>
+            <h2>Verze formátu .apkg</h2>
+                <p>
+                    Pokud vím, existují soubory .apkg ve dvou různých verzích. Všechny jsou to zip archivy obsahující sqlite databázi a soubory médií.
+                </p>
+            <h3>Starší verze</h3>
+                <p>
+                    Starší verze Anki používají jednoduchý přístup popsaný výše. Obsahují sqlite databázi (buď <i>collection.anki2</i>, nebo <i>collection.anki21</i>,
+                    podle verze) a soubor <i>media</i>. Ten je ve formátu json a mapuje původní názvy souborů mediálních příloh na
+                    jejich nové názvy. Nové názvy jsou jen čísla začínající od 0.
+                </p>
+            <h3>Novější verze</h3>
+                <p>
+                    V novějších verzích Anki je všechno mnohem složitější. Soubory jsou komprimované a některé z nich jsou serializované
+                    pomocí protocol buffers.
+                </p>
+                <p>
+                    Kartičky jsou nově uložené v souboru <i>collection.anki21b</i>. Je to sqlite databáze se stejnou strukturou jako <i>collection.anki21</i>
+                    ve starších verzích, ale je komprimovaná pomocí <a target="_blank" href="https://github.com/facebook/zstd">zstd</a>.
+                    Dekomprimovat ji lze například knihovnou pyzstd a pak číst stejně jako <i>collection.anki21</i>.
+                </p>
+                <p>
+                    Soubor <i>media</i> v novějších verzích není json, ale je serializovaný pomocí <a target="_blank" href="https://protobuf.dev/">protocol buffers</a>.
+                    Deserializovat ho není úplně snadné. Nejdřív je potřeba získat soubory <i>.proto</i> z
+                    <a target="_blank" href="https://github.com/ankitects/anki/tree/main/proto/anki">GitHubu Anki</a>. Spousta článků tvrdí, že stačí jen soubor
+                    <i>import_export.proto</i>, ve skutečnosti ale potřebujete všechny. Z nich pak pomocí <a target="_blank" href="https://grpc.io/docs/protoc-installation/">protoc</a>
+                    vygenerujete soubory pro svůj programovací jazyk (v mém případě Python). Ty pak konečně můžete importovat
+                    do svého projektu a použít je ke čtení obsahu souboru <i>media</i>.
+                </p>
+                <p>
+                    Samotné soubory médií (v souboru apkg pojmenované <i>0</i>, <i>1</i>, <i>2</i> atd.) jsou komprimované pomocí zstd a dají se dekomprimovat
+                    stejně jako <i>collection.anki21b</i>.
+                </p>
+    </div>
+
+{% endblock %}

@@ -3,7 +3,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}?v=002">
-<title>rust-labeler | Cenek Potuznik</title>
+<title>rust-labeler | Čeněk Potužník</title>
 {% endblock %}
 
 
@@ -14,7 +14,7 @@
                 <h1>rust-labeler</h1>
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-            <div class="project-description">Rust app for labeling images</div>
+            <div class="project-description">Aplikace v Rustu pro označování obrázků</div>
         </div>
         {{ m.technologies(['Rust', 'CSS', 'JavaScript', 'HTML']) }}
         <a href="https://github.com/cenekp74/rust-labeler" target="_blank" class="project-source">
@@ -22,23 +22,23 @@
         </a>
     </div>
     <div>
-        <h1>About this project</h1>
+        <h1>O projektu</h1>
         <p>
-            Rust-labeler is a simple app made with <a href="https://tauri.app/">Tauri</a> in Rust. It provides a simple way to label images with a category.
-            It features keyboard shortcuts for quick workflow. 
+            Rust-labeler je jednoduchá aplikace v Rustu postavená na frameworku <a href="https://tauri.app/">Tauri</a>. Umožňuje snadno přiřazovat obrázkům kategorie.
+            Díky klávesovým zkratkám je práce s ní rychlá.
         </p>
-        <h1>Key features</h1>
+        <h1>Hlavní funkce</h1>
         <ul>
-            <li><b>images visualization</b> - images are represented by dots for simple navigation and overview</li>
-            <li><b>keyboard shortcuts</b> - keybindings for each category as well as for navigation</li>
-            <li><b>output as json</b> - output is in json format for easy processing</li>
+            <li><b>vizualizace obrázků</b> – obrázky jsou znázorněné tečkami pro snadnou navigaci a přehled</li>
+            <li><b>klávesové zkratky</b> – zkratky pro každou kategorii i pro navigaci</li>
+            <li><b>výstup v json</b> – výstup je ve formátu json pro snadné další zpracování</li>
         </ul>
-        <h1>Current status and future plans</h1>
+        <h1>Současný stav a plány do budoucna</h1>
         <p>
-            I am using this app frequently myself, therefore I will keep maintaining it and adding new features. If you have any 
-            feature request, feel free to contact me via email. 
+            Aplikaci sám často používám, takže ji budu dál udržovat a přidávat nové funkce. Pokud máte
+            nápad na novou funkci, klidně mi napište e-mail.
         </p>
-        <h1>Screenshots</h1>
+        <h1>Snímky obrazovky</h1>
         <img class="project-image" src="{{ url_for('static', filename='img/projects/rust-labeler/rust-labeler.png') }}">
         <img class="project-image" src="{{ url_for('static', filename='img/projects/rust-labeler/edit-categories.png') }}">
     </div>

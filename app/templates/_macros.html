@@ -1,0 +1,37 @@
+{% set TECH_ICONS = {
+    'Python': 'fa-brands fa-python',
+    'Flask': 'flask.svg',
+    'Matplotlib': 'matplotlib.svg',
+    'TensorFlow': 'tensorflow.svg',
+    'Rust': 'fa-brands fa-rust',
+    'HTML': 'fa-brands fa-html5',
+    'CSS': 'fa-brands fa-css',
+    'JavaScript': 'fa-brands fa-js',
+    'SQLite': 'sqlite.svg',
+    'Git': 'fa-brands fa-git-alt',
+    'Linux': 'linux.svg',
+    'Cloudflare': 'fa-brands fa-cloudflare',
+    'Celery': 'celery.svg',
+    'Docker': 'fa-brands fa-docker',
+} %}
+
+{% macro tech(name, icon=None) %}
+{%- set icon = icon or TECH_ICONS[name] -%}
+<div>
+    {%- if icon.endswith('.svg') -%}
+    <img src="{{ url_for('static', filename='img/logos/' ~ icon) }}">
+    {%- else -%}
+    <i class="{{ icon }} fa-fw"></i>
+    {%- endif -%}
+    <span>{{ name }}</span>
+</div>
+{%- endmacro %}
+
+{% macro technologies(names, class='technologies') %}
+<div class="{{ class }}">
+    {% for name in names %}
+    {# an item is either a name, or a (name, icon) pair to override the default icon #}
+    {{ tech(name) if name is string else tech(*name) }}
+    {% endfor %}
+</div>
+{%- endmacro %}

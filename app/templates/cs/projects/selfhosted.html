@@ -3,7 +3,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}?v=002">
-<title>selfhosted | Cenek Potuznik</title>
+<title>selfhosted | Čeněk Potužník</title>
 {% endblock %}
 
 
@@ -11,17 +11,17 @@
     <div class="project-header">
         <div>
             <a class="project-link" href="#" target="_blank">
-                <h1>Self-hosted projects</h1>
+                <h1>Self-hosted projekty</h1>
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-            <div class="project-description">I host various services on my own server at home</div>
+            <div class="project-description">Na vlastním domácím serveru provozuji různé služby</div>
         </div>
         {{ m.technologies([('Linux', 'fa-brands fa-linux'), 'Docker']) }}
     </div>
     <div>
         <p>
-            I am running my own server at home, hosting multiple services for my personal use. <br><br>
-            These services include:
+            Doma provozuji vlastní server, na kterém hostuji několik služeb pro osobní použití. <br><br>
+            Mezi tyto služby patří:
             <ul>
                 <li><a href="https://media.potuznik.dev">Jellyfin</a></li>
                 <li><a href="https://audiobooks.potuznik.dev">Audiobookshelf</a></li>
@@ -30,14 +30,14 @@
             </ul>
         </p>
         <p>
-            The server that these services are hosted on is an old HP machine running Ubuntu Server 22.04.
-            I use nginx as reverse proxy and docker for containing the services. To hide my public ip, I use
-            Cloudflare's proxy.
+            Server, na kterém služby běží, je starší počítač HP s Ubuntu Server 22.04.
+            Jako reverzní proxy používám nginx a služby provozuji v Docker kontejnerech. Abych skryl svou veřejnou IP adresu, používám
+            proxy od Cloudflaru.
         </p>
         <p>
-            In the future, I would like to fully abandon big tech companies such as Google and Microsoft and replace their
-            products with open source, self-hosted alternatives. I am currently in the process of setting up my own mail server
-            and nextcloud. 
+            Do budoucna bych se rád úplně odpoutal od velkých technologických firem, jako jsou Google a Microsoft, a nahradil jejich
+            produkty open source alternativami, které si hostuji sám. Momentálně si zprovozňuji vlastní mailový server
+            a Nextcloud.
         </p>
     </div>
 

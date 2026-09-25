@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>O mně | Čeněk Potužník</title>
+{% endblock %}
+
+
+{% block body %}
+
+<div>
+    <h1 class="page-heading">O mně</h1>
+    <p>
+        Jsem vývojář z <b class="tertiary">Prahy</b>. Specializuji se na tvorbu rychlých, responzivních a spolehlivých webů.
+        Mám několikaleté zkušenosti s tvorbou profesionálních, minimalistických webů, které se snadno udržují a nejsou zatížené zbytečnými závislostmi.
+    </p>
+    <p>
+        K webdesignu (a k programování obecně) přistupuji velmi <b class="tertiary">prakticky</b>. Frontendovým frameworkům se, kde to jde, vyhýbám
+        a dávám přednost jednoduchosti, plné kontrole nad svými projekty a dlouhodobé spolehlivosti.
+    </p>
+    <p>
+        Kromě vývoje webů ovládám <b class="tertiary">Python</b>, který používám na nejrůznější účely. Mám zkušenosti se strojovým učením (AI),
+        vizualizací dat, vývojem desktopových aplikací, zpracováním a analýzou dat, web scrapingem, automatizací a mnoha dalšími oblastmi. <br>
+        Backend svých webových aplikací obvykle píšu v Pythonu pomocí <b class="tertiary">Flasku/Djanga</b>.
+    </p>
+    <p>
+        Protože projekty často sám nasazuji a hostuji, mám dobré znalosti <b>Linuxu</b>. Linuxové servery zvládám spravovat na profesionální úrovni.
+        Běžně pracuji s Dockerem, virtuálními prostředími apod.
+    </p>
+    <p>
+        Některé z mých projektů si můžete prohlédnout v sekci <a href="{{ url_for('projects') }}">Projekty</a>.
+    </p>
+
+    <h2>Vzdělání</h2>
+    <p>
+        V roce 2026 jsem odmaturoval na gymnáziu v Praze. V současnosti studuji matematiku na Univerzitě Karlově.
+        Mám <b>certifikát C2</b> z angličtiny a učím se francouzsky.
+    </p>
+
+    <h2>Pracovní zkušenosti</h2>
+    <p>
+        V současnosti pracuji v <b class="tertiary">Ústavu fyziky atmosféry</b> a ve <b class="tertiary">Fyzikálním ústavu</b> Akademie věd ČR. Zaměřuji se
+        na zpracování a vizualizaci dat, často v kombinaci s vývojem jednoduchých GUI a webových aplikací.
+    </p>
+    <p>
+        Více o mých pracovních zkušenostech si můžete přečíst <a href="{{ url_for('work') }}">zde</a>.
+    </p>
+    <h2>Vědecká činnost</h2>
+    <p>
+        Podílel jsem se na <b>několika recenzovaných vědeckých článcích</b>, u některých z nich jsem spoluautorem
+        (například <a href="https://doi.org/10.1109/RADIOELEKTRONIKA61599.2024.10524086">tento</a>). Moje práce navíc přispěla ke vzniku řady
+        materiálů prezentovaných na odborných konferencích (například <a href="https://spaceclimate.bas.bg/ws-sozopol/pdf/16th/Thursday/Potuznikova.pdf">tato prezentace</a>).
+    </p>
+</div>
+
+<script>
+    document.getElementById("navbar-about").classList.add("active")
+</script>
+{% endblock %}
